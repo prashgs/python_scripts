@@ -45,23 +45,24 @@ def log_error(e):
 def main():
     headers = []
     countries_html = get_html("https://www.geonames.org/countries/")
-    html = bs(countries_html, 'html.parser')
-    countries_table = html.find("table", {"id": "countries"})
+    if countries_html != None:
+        html = bs(countries_html, 'html.parser')
+        countries_table = html.find("table", {"id": "countries"})
 
-    # Get Column header names, starting with Country(4th column)
-    data = {header.text: [] for header in countries_table.findAll("th")[4:]}
-    print("-------Headers-------")
-    print(headers)
-    # Get each row(tr), get all tds for each row
-    for row in countries_table.findAll("tr")[1:]:
-        for key, a in zip(data.keys(), row.find_all("td")[4:]):
-            data[key].append(a.text)
+        # Get Column header names, starting with Country(4th column)
+        data = {header.text: [] for header in countries_table.findAll("th")[4:]}
+        print("-------Headers-------")
+        print(headers)
+        # Get each row(tr), get all tds for each row
+        for row in countries_table.findAll("tr")[1:]:
+            for key, a in zip(data.keys(), row.find_all("td")[4:]):
+                data[key].append(a.text)
 
-    print("-------Extract-------")
-    print(data)
-    df = pd.DataFrame.from_dict(data)
-    df.to_csv("countries_data")
-    print(df.head())
+        print("-------Extract-------")
+        print(data)
+        df = pd.DataFrame.from_dict(data)
+        df.to_csv("countries_data.csv",index=False)
+        print(df.head())
 
 if __name__ == "__main__":
     main()
