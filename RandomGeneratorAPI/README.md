@@ -26,33 +26,7 @@ Different generators can be accessed using urls as below
 
 Sample response
 ```
-{
-  "people": [
-    {
-      "job": "Psychiatrist",
-      "company": "Montoya-Anderson",
-      "ssn": "418-72-7391",
-      "residence": "8410 Ball Junction\nDouglasmouth, NJ 26695",
-      "current_location": [
-        19.2916115,
-        -101.594037
-      ],
-      "blood_group": "A-",
-      "website": [
-        "https://erickson-kennedy.info/",
-        "https://cole.com/",
-        "https://berger.com/",
-        "https://ramirez.info/"
-      ],
-      "username": "melvin24",
-      "name": "Cassandra Johnson",
-      "sex": "F",
-      "address": "665 Michael Cove\nEricaborough, WI 36697",
-      "mail": "dustin61@gmail.com",
-      "birthdate": "2013-04-05"
-    }
-  ]
-}
+{"addresses":["301 Maldonado Walk Suite 978, North Brandon, ND 73499"]}
 ```
 
 Query strings can be used to generate multiple items
