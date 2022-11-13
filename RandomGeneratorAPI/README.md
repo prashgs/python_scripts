@@ -55,12 +55,11 @@ Sample response
 }
 ```
 
-Query strings can be used to 
+Query strings can be used to generate multiple items
 ```
 http://127.0.0.1:8000/randomnumbers?number=5&digits=5
 http://127.0.0.1:8000/people?number=5
 ```
-
 
 
 FastAPI exposes API documentation through SwaggerUI and ReDoc
