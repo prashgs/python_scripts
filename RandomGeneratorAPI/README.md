@@ -15,11 +15,11 @@ pip install mimesis
 
 
 
-
 ### Usage
 To run API server you can use ```uvicorn app:app --reload```.
 Server will start at localhost and at port 8000 by default ```http://127.0.0.1:8000```
 Different generators can be accessed using urls as below
+```
 - http://127.0.0.1:8000/addresses
 - http://127.0.0.1:8000/people
 ```
